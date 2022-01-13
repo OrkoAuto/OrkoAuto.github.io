@@ -1,0 +1,681 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset="utf-8">
+    <title>NetSuite Tasks</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <style type="text/css">
+      html * {
+        font-size: 1em !important;
+        color: #000 !important;
+        font-family: Arial !important;
+      }
+    </style>
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/jquery.dataTables.css">
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+
+  </head>
+
+  <body>
+    <table id="tasks" class="display" style="width:70%">
+      <thead>
+        <tr>
+          <th>Process</th>
+          <th>CASE ID</th>
+          <th>Assigned To</th>
+          <th>Feature</th>
+          <th>Scenario</th>
+          <th>Recommended Role</th>
+          <th>Steps</th>
+          <th>Verification</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R05.01</td>
+          <td>Accounting BMG</td>
+          <td>Create Journal Entries</td>
+          <td>Enter Journal Entry</td>
+          <td>Accounting Analyst</td>
+          <td>1. Financial > Other > Make Journal Entries<br><br>2. On the new Journal Entry page enter the following in the header section of the page:<br> - Subsidiary<br> - Memo: UAT Case R2R05<br><br>3. Enter balancing Journal Entry lines. Enter the following info for each line.<br> - Account<br> - Debit or Credit Amount<br> - Department, Class and/or Location (if applicable)<br><br>4. Click Save.</td>
+          <td>1. Review the Out of Balance By fields as you enter journal lines. <br><br>2. Journal successfully Saved.<br><br>3. Journal Entry status is 'Transaction successfully saved"</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P07.04</td>
+          <td>Accounting BMG</td>
+          <td>Blanket Purchase Order</td>
+          <td>Bill Purchase Order</td>
+          <td>AP Analyst</td>
+          <td>1. From the home Dashboard, click on 'Purchase Orders to Bill' on the Reminders portlet. Bill Purchase Orders page opens.<br><br>2. On the Bill Purchase Orders page, filter the list by selecting the Vendor used in Step 1. Then, click on the Date link for the Purchase Order being billed. The Purchase Order from Step 1 opens in View mode. Click the Bill button.<br><br>3. Review the Bill information, including Amount, Date, Posting Period, and Terms. Click Save.</td>
+          <td>1. Purchase order is found for billing.<br><br>2. Transaction successfully Saved.<br><br>3. Bill status is Open.<BR><br>4. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P02.07</td>
+          <td>Accounting BMG</td>
+          <td>Purchase Order, Item Receipt, Bills, Pay Bills</td>
+          <td>Pay Bill</td>
+          <td>AP Analyst</td>
+          <td>1. From the home Dashboard, click on 'Bills to Pay' from the Reminders portlet. Bill Payments page opens.<br><br>2. On the Bill Payments page, locate the Bill created in Step 3 and click the Bill link to open the Bill in View mode. Click the Make Payment button.<br><br>3. On the Bill Payment page, review the information in the header. Then, on the Apply tab verify that the Apply box is checked for the Bill and click Save.</td>
+          <td>1. Transaction successfully Saved.<br><br>2. Vendor Bill status is Paid in Full.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P04.02</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Prepayment</td>
+          <td>Write a Check</td>
+          <td>AP Analyst</td> "<td>1. Navigate to Transactions > Bank > Write Checks.
+
+            2. Select Vendor in the payee field.
+
+            3. Navigate to the Expenses subtab and in the Account column select the new account created above.
+
+            4. Enter the amount for the prepayment in the amount field.
+
+            5. Include any additional notes in the memo field.
+
+            6. Click Add.
+
+            7. Click Save.</td>" "<td>1. Form opens successfully.
+
+            2. Entry of the prepayment is successful.
+
+            3. Transaction is saved.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P06.03</td>
+          <td>Accounting BMG</td>
+          <td>Purchase Order from Order Items</td>
+          <td>Bill Purchase Order</td>
+          <td>AP Analyst</td> "<td>1. From the home Dashboard, click on 'Purchase Orders to Bill' on the Reminders portlet.
+
+            2. On the Bill Purchase Orders page, filter the list by selecting the Vendor used in Step 1. Then, click on the Date link for the Purchase Order being billed. Click the Bill button.
+
+            3. Review the Bill information, including Amount, Date, Posting Period, and Terms. Click Save.</td>" "<td>1. Bill Purchase Orders page opens.
+
+            2. Transaction successfully Saved.
+
+            3. Bill status is Open.
+
+            4. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P06.04</td>
+          <td>Accounting BMG</td>
+          <td>Purchase Order from Order Items</td>
+          <td>Pay Bill</td>
+          <td>AP Analyst</td> "<td>1. From the home Dashboard, click on 'Bills to Pay' from the Reminders portlet.
+
+            2. On the Bill Payments page, locate the Bill created in Step 3 and click the Bill link to open the Bill in View mode. Click the Make Payment button.
+
+            3. On the Bill Payment page, review the information in the header. Then, on the Apply tab verify that the Apply box is checked for the Bill and click Save.</td>" "<td>1. Bill Payments page opens.
+
+            2. Transaction successfully Saved.
+
+            3. Vendor Bill status is Paid in Full.
+
+            4. Verify the GL Impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P02.06</td>
+          <td>Accounting BMG</td>
+          <td>Purchase Order, Item Receipt, Bills, Pay Bills</td>
+          <td>Bill Purchase Order</td>
+          <td>AP Analyst</td>
+          <td>1. From the home Dashboard, click on 'Purchase Orders to Bill' on the Reminders portlet. Bill Purchase Orders page opens.<br><br>2. On the Bill Purchase Orders page, filter the list by selecting the Vendor used in Step 1. Then, click on the Date link for the Purchase Order being billed. The Purchase Order from Step 1 opens in View mode. Click the Bill button.<br><br>3. Review the Bill information, including Amount, Date, Posting Period, and Terms. Click Save.</td>
+          <td>1. Purchase order is found for billing.<br><br>2. Transaction successfully Saved.<br><br>3. Bill status is Open.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P04.03</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Prepayment</td>
+          <td>Enter a Vendor Credit</td>
+          <td>AP Analyst</td> "<td>1. Navigate to Transactions > Payables > Enter Vendor Credits.
+
+            2. Select the vendor used in the steps above.
+
+            3. Navigate to the Expenses subtab and select the account number added in step 1.
+
+            4. Enter the prepayment amount in the amount column.
+
+            5. Click Add.
+
+            6. Click Save.
+
+            Note: When you receive the bill from the vendor, you can apply this credit.</td>" "<td>1. Form opens successfully.
+
+            2. Entry of the credit is successful.
+
+            3. Transaction is saved.
+
+            4. Validate the new account number created in Step 1 is cleared with a balance of zero.
+
+            5. Validate credit on the vendors account.
+
+            6. Validate Impact on GL is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P09.03</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Return with Item Fulfillment</td>
+          <td>Credit Vendor Return</td>
+          <td>AP Analyst</td>
+          <td>1. From the Home Dashboard, click on Vendor Return Authorizations to Refund on the Reminders portlet. Refund <br><br>2. Click on the Date link next to the Return created in Step 1. <br><br>3. Click the Refund button. Bill Credit page opens.<br><br>4. Review the Bill Credit information and click Save.</td>
+          <td>1. Vendor Return Authorization form opens.<br><br>2. Vendor Return Authorization opens in View mode.<br><br>3. Transaction successfully Saved.<br><br>4. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P07.05</td>
+          <td>Accounting BMG</td>
+          <td>Blanket Purchase Order</td>
+          <td>Pay Bill</td>
+          <td>AP Analyst</td>
+          <td>1. From the home Dashboard, click on 'Bills to Pay' from the Reminders portlet. Bill Payments page opens.<br><br>2. On the Bill Payments page, locate the Bill created in Step 3 and click the Bill link to open the Bill in View mode. Click the Make Payment button.<br><br>3. On the Bill Payment page, review the information in the header. Then, on the Apply tab verify that the Apply box is checked for the Bill and click Save.</td> "<td>1. Bill Payments page opens.
+
+            2. Transaction successfully Saved.
+
+            3. Vendor Bill status is Paid in Full.
+
+            4. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P09.05</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Return with Item Fulfillment</td>
+          <td>Manage Vendor Refund: Associate Credit to Deposit</td>
+          <td>AP Analyst</td>
+          <td>Optional Step - This step should follow Step 4 only if Vendor provides a refund.<br><br>1. Navigate to Vendors > Accounts Payable > Pay Single Vendor.<br><br>2. On the Bill Payment page, click the Apply check box next to the Bill Credit from Step 3 and Deposit from Step 3.<br><br>3. Click Save.</td> "<td>1. Transaction successfully Saved
+
+            2. Bill Credit from Step 3 is applied.
+
+            3. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C01.07</td>
+          <td>Accounting BMG</td>
+          <td>Create Sales Order, Fulfill, Invoice</td>
+          <td>Invoice Order</td>
+          <td>AR Analyst</td>
+          <td>1. Navigate to the Customers > Sales > Invoice SO<br><br>2. Choose "Customer"<br><br>3. From the Orders sublist, choose the customer invoice to be billed<br><br>4. On the Invoice page, validate the information and click Save & Print<br><br>5. Go to Customers > Sales > Create Customer Invoice > List</td>
+          <td>1. Transaction successfully saved. Invoice record is created.<br><br>2. Invoice PDF is created.<br><br>3. Able to find, view, and update invoice.<br><br>4. Customer Invoice should have an "open" status</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C01.08</td>
+          <td>Accounting BMG</td>
+          <td>Create Sales Order, Fulfill, Invoice</td>
+          <td>Process Payment</td>
+          <td>AR Analyst</td>
+          <td>1. Locate the Customer Invoice that was created earlier by typing the invoice number into the Global Search at the top of the page.<br>Alternative navigation: Go to Customers > Sales > Create Customer Invoice > List<br><br>2. From the Invoice page, click the Accept Payment button.<br><br>3. On the Payment page, ensure that the Invoice is selected at the bottom of the page on the Apply subtab and the correct Payment amount is reflected.<br>* make sure you selected the correct "account"<br><br>4. Click Save.<br><br>5. Check GL impact</td>
+          <td>1. Transaction successfully Saved.<br><br>2. Payment record is Deposited/ Undeposited (depending on the account chosen)<br><br>3. Validate GL impact. E.g. Accounts Receivable is credited</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C02.03</td>
+          <td>Accounting BMG</td>
+          <td>Enter and Apply Customer Deposit</td>
+          <td>Apply Customer Deposit When Not Automatically Applied</td>
+          <td>AR Analyst</td> "<td>1. Navigate to Transactions > Customers > Record Customer Deposits > List.
+
+            2. Click view next to the deposit to be applied.
+
+            3. Click apply on the customer deposit page.
+
+            4. Enter/Select required information and data pertaining to your business requirements.
+
+            5. Click the apply box next to the invoices you want to apply the deposit against (up to the total amount of the deposit).
+
+            6. Click save.</td>" "<td>1. Deposit is found.
+
+            2. Deposit is applied and invoice amount is reduced by amount applied.
+
+            3. Validate GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R02.02</td>
+          <td>Accounting BMG</td>
+          <td>Confirm Accounting Setup</td>
+          <td>Accounting Periods</td>
+          <td>Controller</td>
+          <td>1. Setup > Accounting > Manage Accounting Periods</td>
+          <td>1. Confirm that accounting periods have been configured</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P09.04</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Return with Item Fulfillment</td>
+          <td>Manage Vendor Refund: Deposit</td>
+          <td>Controller</td>
+          <td>Optional Step - This step should be used if Vendor provides a refund.<br><br>1. Navigate to Financial > Banking > Make Deposits. <br><br>2. In the header section of the page, enter the following:<br> - Account: Select a cash account to deposit the refund<br> - Memo: Refund for R2C01<br><br>3. On the Deposits tab, select the Other Deposits sublist and enter the following onto the first line:<br> - Name: Select Vendor used in the Vendor Return<br> - Amount: Enter the amount from the Vendor Credit (Step 3)<br> - Account: Select the Accounts Payable account from Step 3<br> - Payment Method: Check<br> - Number: Enter a fictional check number<br> <br>4. Click Add on the line.<br><br>5. Click Save.</td> "<td>1. Deposit form opens.
+
+            2. Transaction successfully Saved.
+
+            3. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R07.03</td>
+          <td>Accounting BMG</td>
+          <td>Upload and Reconcile Credit Card & Bank Statements</td>
+          <td>Match and Reconcile Account Statements (Reconcile Account Statement)</td>
+          <td>Controller</td>
+          <td>1. Financial > Banking > Reconcile Account Statement<br><br>2. Select the following information:<br> - Applicable Account<br> - Statement Date<br> - Ending Statement Balance<br><br>3. Under Reconcile tab: Review Information auto Matched by the system OR the match submitted on Match bank data <br><br>4. Review tab : Reconcile, exlude any transaction if needed<br><br>5. Click Reconcile button.</td>
+          <td>1. Reconcile Account Statement page will be displayed.<br><br>2. Entries are entered successfully.<br><br>3. Information reviewed<br><br>4. Tabs reviewed<br><br>5. Transaction is successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>R2C01.06</td>
+          <td>Accounting BMG</td>
+          <td>Customer Return - Credit</td>
+          <td>Refund Customer</td>
+          <td>Controller</td>
+          <td>1. On the home Dashboard, click 'Return Authorizations to Approve' from the Reminders portlet.<br>Alternative navigation: Customers > Credit Returns > Approve Return Authorizations<br><br>2. Choose RMA created in Step4, click the 'Refund' button (Customer Refund page opens).<br><br>3. On the Customer Refund page, click on the Refund Method tab and select Refund Method.<br><br>3. Click Save.</td>
+          <td>1. Transaction successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>R2C01.05</td>
+          <td>Accounting BMG</td>
+          <td>Customer Return - Credit</td>
+          <td>Credit Return</td>
+          <td>Controller</td>
+          <td>1. On the home Dashboard, click 'Return Authorizations to Refund' from the Reminders portlet.<br>Alternative navigation: Customers > Credit Returns > Issue Return Authorizations<br><br>2. From the Refund Return Authorization list, click the date field/link for the Return Authorization created in Step 2 (Return Authorization page opens).<br><br>3. Review the Return Authorization to verify that the line item has been returned (Returned column) and then click the 'Refund' button (Credit Memo page opens).<br><br>4. Review the Credit Memo and click Save.</td>
+          <td>1. Transaction successfully Saved.<br><br>2. Credit Memo status is Open.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R03.01</td>
+          <td>Accounting BMG</td>
+          <td>Review & Validate Period Close Checklist</td>
+          <td>Review Period Close Checklist</td>
+          <td>Controller</td> "<td>1. Go to Setup > Accounting > Manage Accounting Periods
+
+            2. Click the Checklist Icon for a period
+
+            3. Review the tasks in the checklist. Tasks are listed in the order in which they should be completed.
+
+            4. To complete a task, click the Go to Task icon for the task.</td>" "<td>1. Ensure access to Period Close Checklist.
+
+            2. Close prior periods as necessary after historical uploads have been completed.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R07.01</td>
+          <td>Accounting BMG</td>
+          <td>Upload and Reconcile Credit Card & Bank Statements</td>
+          <td>Upload Bank/Credit Card Statements (If applicable)</td>
+          <td>Controller</td>
+          <td>1. Financial > Banking > Bank Import History> Upload File<br><br>2. On the Upload File Import page select what is applocable: Manual Import.<br> - Choose File: upload the bank statement in OFX, QFX, or CSV file format<br> - Select Import with a default parser<br> - Select Account: Bank Account to Reconcile<br><br>3. Click Import.</td>
+          <td>1. Track Statuc: On the Imported Statement List: View Imported File. See Imported Details. Importe dtatus will be displayed, Matched transactions will be listed.<br><br>NOTE: Auto Match identifies a match for a bank transaction if an existing transaction meets all of the following basic criteria: has a date that is the same or earlier, has a matching dollar amount, has a matching bank account number<br><br>If Auto Match cannot match a bank transaction, the Matched Transaction column is blank, and the Type column displays a link to the Find Transactions page where you can manually match the transaction.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R02.01</td>
+          <td>Accounting BMG</td>
+          <td>Confirm Accounting Setup</td>
+          <td>General Ledger</td>
+          <td>Controller</td>
+          <td>1. Financial > Lists > Accounts</td> "<td>1. Validate General Ledger Configuration and that it conforms to company requirements
+
+            2. Ensure that there are no duplicate accounts
+
+            3. Ensure that bank accounts are limited to a single subsidiary</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P04.01</td>
+          <td>Accounting BMG</td>
+          <td>Vendor Prepayment</td>
+          <td>Create Holding Account</td>
+          <td>Controller</td> "<td>1. Navigate to Setup > Accounting > Manage G/L > Chart of Accounts > New.
+
+            2. Enter Other Current Asset in the type field.
+
+            3. If using account numbers, enter a number in the number field.
+
+            4. Enter a name in the name field; for example Temporary Holding.
+
+            5. Click Save.</td>" "<td>1. Chart of Accounts form opens successfully.
+
+            2. Entry of the new account is successful.
+
+            3. Account is saved to the chart of accounts.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R01.02</td>
+          <td>Accounting BMG</td>
+          <td>Validate Subsidiaries & Segments</td>
+          <td>Validate Classifications</td>
+          <td>Controller</td> "<td>1. Financial > Lists > Departments
+
+            2. Financial > Lists > Locations
+
+            3. Financial > Lists > Classes</td>" "<td>1. Validate Departments configured correctly
+
+            2. Validate Locations configured correctly
+
+            3. Validate Classes configured correctly</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R03.03</td>
+          <td>Accounting BMG</td>
+          <td>Review & Validate Period Close Checklist</td>
+          <td>Review Multi-Currency -Related Tasks [If Applicable]</td>
+          <td>Controller</td> "<td>1. Go to Setup > Accounting > Manage Accounting Periods
+
+            2. If the account has multiple currencies enabled, click the icon for Calculate Consolidated Exchange Rates and Revalue Open Foreign Currency Balances.
+
+            3. Click Currency Revaluation to go to the Select Accounts to Revalue page and complete this process.
+
+            4. In a NetSuite OneWorld account, you must complete revaluation for each subsidiary. Go to the Select Accounts to Revalue page to select each subsidiary and complete the task. Depending upon your account, you may revisit this page multiple times. Complete revaluation before closing the period.
+
+            5. If your revaluation is finished, click Mark Task Complete. If you have previously marked this task complete but must do more work, click Mark Task In Progress. To go back to the checklist page, click Cancel.</td>" "<td>1. Ensure Access to Multi-Currency Related tasks if applicable.
+
+            NOTE: You must have the Currency Revaluation permission as well as the Override Period
+            Restrictions permission to complete this task for the subsidiaries you can access.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R07.02</td>
+          <td>Accounting BMG</td>
+          <td>Upload and Reconcile Credit Card & Bank Statements</td>
+          <td>Match and Reconcile Account Statements (Match Bank Data)</td>
+          <td>Controller</td>
+          <td>1. Financial > Banking > Match Bank Data<br><br>2. Select the following information:<br> - Applicable Account (Click Update Imported Bank Data button if bank statement is uploaded, otherwise continue manually)<br><br>3. Process Bank reconciliation as applicable:<br>3.1 No Imported Bank statement: <br>- Under account Transactions Click each line box that matches to bank statement <br><br>3.2 With Imported Bank Statement: <br>- Under To Be Matched tab: Match Imported Bank Data to NetSuite Account Transactions. Click each line box to match. Note: Verfify Match/Exclude at the bottom page<br>- Review Other tabs : Matches To Submit, Excluded as necessary<br><br>4. Click Submit button.</td>
+          <td>1. Match Bank data page opens successfully.<br><br>2. Entries are entered successfully.<br><br>3. Match Result and Difference can be viewed at the bottom section<br><br>4. Transaction is successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Record to Report</td>
+          <td>R2R04.01</td>
+          <td>Accounting BMG</td>
+          <td>Setup Currencies for Automatic Updates</td>
+          <td>Ensure Currencies are Setup for Automatic Updates</td>
+          <td>Controller</td> "<td>1. Financial > Lists > Currencies
+
+            2. Click the name of a currency
+
+            3. On the Currency page, if the Automatic Update box is checked, NetSuite updates the exchange rate between this foreign currency and the base currency (or for NetSuite OneWorld, the base currency of each subsidiary).
+
+            4. On the record of a currency that has been defined as a base currency, the Update Time Zone field determines the time of the daily automatic exchange rate updates. These updates occur at 6 a.m. in the selected time zone.
+
+            5. Click Save.</td>" <td>1. Ensure proper setup of currencies and exchange rates</td>
+        </tr>
+        <tr>
+          <td>Design to Build</td>
+          <td>D2B06.00</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Create Assembly or Sub-Assembly</td>
+          <td>Create Assembly or Sub-Assy</td>
+          <td>Engineer or Production Manager</td>
+          <td>1. Go To: Inventory> Lists> Items> New<br><br>2. Click on Assembly/Bill of Materials Item <br><br>3. Enter the following information<br> - Item Name/Number<br> - Description<br> - Is item specific to subsidiary(ies) and/or locations?<br> - Documents (if there are other attchement you need e.g. Drawing, WO Instructions etc.)<br><br>4. Select on Purchasing/Inventory sub tab<br> - Select costing method<br> - Review fields to determine what is applicable to your item<br> - Under Components sub lists<br> - select appropriate items for this sub-assy<br> - enter the quantity required for each sub-assy <br><br>5. Select the Accounting sub tab <br> - Update the GL accounts as appropriate (COGS, Asset, Income)<br> - Select Tax Schedule (required) <br><br>6. Click Save.</td>
+          <td>1. New item form opens successfully and allows entry.<br><br>2. Entries are entered successfully.<br><br>3. Assembly record is successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C01.04</td>
+          <td>Sineado Dalayoan</td>
+          <td>Create Sales Order, Fulfill, Invoice</td>
+          <td>Create/ View/ Update Sales Orders</td>
+          <td>Sales</td>
+          <td>1. Navigate to Opportunities > Transactions > Sales Orders<br><br>2. Click "New Sales Order"<br>*For viewing of SO, you can just click the date link*<br><br>3. Choose<br>- Customer<br>- Date<br>- Sales Rep<br>- Item, Quantity, Amount (update Inventory Detail for Bin/ Serialized, if needed)<br><br>4. Assign Class<br>*If item is commisionable, a sales representative will be populated based on class assigned. However, you can assign different sales representative per line level<br><br>5. Mark the check box as commissionable as indication for computation of commissions payable to assigned sales representative<br>*Not all items are commissionab lest you can lave this blank <br><br>6. Click "Save"</td>
+          <td>1. New Sales Order form opens Successfully<br><br>2. Entries are entered successfully<br><br>3. Auto-population of Sales representative based on class selected<br><br>4. Line item will be reported/visible on the Commission Report when generated<br><br>5. Transaction successfully saved. Sales Order status is Pending Fulfillment.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C02.01</td>
+          <td>Sineado Dalayoan</td>
+          <td>Enter and Apply Customer Deposit</td>
+          <td>Record Customer Deposit: Customer Deposit Page</td>
+          <td>Sales</td> "<td>1. Navigate to Transactions > Customers > Record Customer Deposits.
+
+            2. Enter/Select primary information:
+            - Customer or Project
+            - Payment Amount
+            - Bank Account or Undep. Funds
+            - Classifications
+            - Payment Method
+
+            3. Click Save.</td>" "<td>1. Customer deposit is saved and can be viewed.
+
+            2. Validate GL Impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>R2C01.02</td>
+          <td>Sineado Dalayoan</td>
+          <td>Customer Return - Credit</td>
+          <td>Create Return</td>
+          <td>Sales</td>
+          <td>1. Go to Customers > Sales > Create Customer Invoice > List<br><br>2. Click on the customer invoice created in O2C01<br><br>3. Click "Authorize Return"<br><br>4. On the new Return Authorization page, remove any line items that are not being returned leaving only the items and quantities being returned.<br><br>5. Click Save.</td>
+          <td>1. Transaction successfully created.<br><br>2. Return Authorization status is Pending Approval.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C02.02</td>
+          <td>Sineado Dalayoan</td>
+          <td>Enter and Apply Customer Deposit</td>
+          <td>Record Customer Deposit: Sales Order</td>
+          <td>Sales</td> "<td>1. Upon saving the Sales Order, click the Create Deposit button.
+
+            2. Enter the appropriate information.
+
+            3. Click Save.
+
+            NOTE: Deposits created this way can only be applied to this order. When you invoice this sales order, the reserved deposit is automatically applied.</td>" "<td>1. Customer deposit is saved and can be viewed.
+
+            2. Validate GL Impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>R2C01.03</td>
+          <td>Sineado Dalayoan</td>
+          <td>Customer Return - Credit</td>
+          <td>Approve Return</td>
+          <td>Sales Manager</td>
+          <td>1. From the home Dashboard, click on 'Return Authorizations to Approve' from the Reminders portlet.<br><br>2. On the Approve Authorizations list, click the date field/link for the Return Authorization created in Step 2.<br><br>3. Review the Return Authorization and click the "Approve Return" button.</td>
+          <td>1. Return Authorization successfully Approved.<br><br>2. Return Authorization status is "Pending Receipt".</td>
+        </tr>
+        <tr>
+          <td>Design to Build</td>
+          <td>D2B02.00</td>
+          <td>Elsie L Chee</td>
+          <td>Create Inventory Adjustment</td>
+          <td>Adjust Inventory</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Go To: Inventory> Inventory> Adjust Inventory<br><br>2. Enter required information.<br> - In the header section of the page, select an Adjustment Account (this is typically an expense account).<br> - Date: enter date of transaction<br><br>3. On the Adjustments tab select an Item, select a valid location, and enter<br> - Adjust Qty. By a number<br> - Unit Cost<br><br>4. Click the Add button on the line.<br><br>5. Click Save.</td>
+          <td>1. Inventory adjustment form opens successfully.<br><br>2. Entries are entered successfully <br><br>3. Validate item is adjusted with both cost and quantity.<br><br>4. Transaction successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P06.01</td>
+          <td>Elsie L Chee</td>
+          <td>Purchase Order from Order Items</td>
+          <td>Create Purchase Order</td>
+          <td>Supply Chain Manager</td> "<td>1. From the home Dashboard, click Order Items on the Navigation Portlet.
+
+            2. On the Order Items page, select the Location where the order will be received. In the item list below, check the box for the item you plan to order.
+
+            3. Click Submit.
+
+            4. Click Refresh until the Status is Complete.</td>" "<td>1. Order Items page opens.
+
+            2. Processed Purchase Orders page appears.
+
+            3. Status is Complete, a Purchase Order Number is generataed, and Approval Status is Pending Approval or Approved (depending on your configuration).
+
+            Note: if pending approval - obtain PO approval before moving to next step.</td>
+        </tr>
+        <tr>
+          <td>Design to Build</td>
+          <td>D2B01.00</td>
+          <td>Elsie L Chee</td>
+          <td>Create new Inventory Item</td>
+          <td>Create Item</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Go To: Inventory> Lists> Items> New<br><br>2. Click on Inventory Item or select the type of item. <br><br>3. Enter the following information:<br> - Item Name/Number (on page header)<br> - Display Name/Code (on page header, if different from Item name)<br> - Units Type (if applicable) (on page Header)<br> - Description (Purchase/sales tab)<br> - Costing Method (on Purchasing/Inventory tab)<br> - Replenishment Method (on Purchasing/Inventory tab)<br> - Base Price (Sales/Pricing tab: Price Levels)<br> - COGS, Asset, Income Account (on Accounting tab)<br> - Tax schedule (on Accounting tab)<br><br>4. Click Save.</td>
+          <td>1. New Item Page will be displayed<br><br>2. New item form opens successfully. New item form allows entry.<br><br>3. Item record successfully Saved.<br><br>*Note: all items must be created before attaching to assembly items for BOM. Costing Method & Units type (if applicable) will be fixed once Item record is saved.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P01.00</td>
+          <td>Elsie L Chee</td>
+          <td>Create Vendor</td>
+          <td>Create Vendor</td>
+          <td>Supply Chain Manager</td> "<td>1. Navigate to the Shortcuts menu and click on Vendors (Vendors page opens). Click the New Vendor button.
+
+            2. On the new Vendor page enter the mandatory fields in the header section and fields important to your business and this specific transaction.
+
+            3. On the Address tab, click the pencil icon in the Edit column to open the new address window. Complete address fields and click the OK button to close the new Address window. Click the Add button on the line.
+
+            4. Click Save.</td>" <td>1. Vendor successfully Saved, can be found and updated.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P02.04</td>
+          <td>Elsie L Chee</td>
+          <td>Purchase Order, Item Receipt, Bills, Pay Bills</td>
+          <td>Enter Purchase Order</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Navigate to Receiving> Receiving> Enter Purchase Orders<br><br>2. In the header section enter the following:<br> - Date<br> - Vendor Name<br> - Location: Select location where items will be received<br><br>3. On the Items tab, select:<br> - Item <br> - enter Quantity, rate <br> - Click the Add button on the line.<br><br>4. Click Save.</td>
+          <td>1. New Purchase Order form opens Successfully<br><br>2. Entries are entered successfully<br><br>3. Transaction successfully saved. Purchase Order status is Pending Receipt.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P07.02</td>
+          <td>Elsie L Chee</td>
+          <td>Blanket Purchase Order</td>
+          <td>Release Purchase Order</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Go to Receiving > Receiving > Enter Blanket Purchase Order > List.<br><br>2. Click Edit next to the Blanket Purchase Order in Step 1. <br><br>3. Click the Schedule icon on a blanket purchase order line to view the schedule.<br><br>4. Check the box in the Release column for lines that need to be ordered.<br><br>5. Click OK for the schedule line.<br><br>6. Click OK for the blanket order line.<br><br>7. Click Save.<br><br>*After schedules have been released, the resulting purchase orders appear on the schedule detail window.</td>
+          <td>1. Blanket Purchase Order opens in Edit mode.<br><br>2. Transaction successfully Saved.<br><br>3. Purchase Order created for the released items. <br><br>NOTE: Purchase Orders may require approval before moving onto next steps depending on your configuration.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P07.01</td>
+          <td>Elsie L Chee</td>
+          <td>Blanket Purchase Order</td>
+          <td>Create Blanket Purchase Order</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Go to Receiving> REceiving> Enter Blanket Purchase Order<br><br>2. In the header section of the new Blanket Purchase Order page enter the following:<br> - Select Vendor<br> - Location: Select location where items will be received<br><br>3. On the Items tab, select an Item and enter Quantity = 500. Click the Schedule icon to open the schedule dialogue box.<br><br>4. In the schedule dialogue box, set the following values:<br> - Create Purchase Orders = Manually<br> - Create Schedule = Autgenerate<br> - Release Frequency = Daily<br> - Start Date = today's date (default)<br><br>5. Click the Autogenerate button to populate the values. Click OK.<br><br>6. Click Add when you have completed the line item.<br><br>7. Click Save.</td>
+          <td>1. Blanket Purchase Orders page opens.<br><br>2. Entries are entered successfully<br><br>3. Transaction is successfully Saved<br><br>4. Status is Active.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P09.01</td>
+          <td>Elsie L Chee</td>
+          <td>Vendor Return with Item Fulfillment</td>
+          <td>Create Vendor Return Authorization</td>
+          <td>Supply Chain Manager</td> "<td>1. Locate a the Vendor Bill created in scenario P2P06.03 by entering the bill number into the Global Search and clicking on the transaction. (This number was recorded in Step 3)
+
+            2. Click the Authorize Return button.
+
+            3. On the Vendor Return Authorization page, review the information and click Save.</td>" "<td>1. Transaction successfully Saved.
+
+            2. Screen returns to the Vendor Bill.</td>
+        </tr>
+        <tr>
+          <td>Design to Build</td>
+          <td>D2B04.00</td>
+          <td>Elsie L Chee</td>
+          <td>Inventory Transfer</td>
+          <td>Enter Inventory Transfer</td>
+          <td>Supply Chain Manager</td>
+          <td>1. Go To: Inventory > Inventory > Transfer Inventory<br><br>2. In the header section of the page select:<br> - Subsidiary: select correct subsidiary<br> - Date: enter transaction date<br> - From Location and To Location.<br><br>3. On the Items tab select Item and enter Qty. To Transfer = 1.<br><br>4. Click the Add button on the line.<br><br>5. Click Save.</td>
+          <td>1. Inventory Transfer page opens.<br><br>2. Item Quantity on Hand has been reduced by 1 at the From Location and increased by 1 at the To Location.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P07.03</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Blanket Purchase Order</td>
+          <td>Receive Purchase Order</td>
+          <td>Warehouse Operations</td>
+          <td>1. From the home Dashboard, click on 'Orders to Receive' on the Reminders portlet (Refresh portlet as needed). Receive Orders page opens.<br><br>2. On the Receive Order page, locate the Purchase Order created in Step 1 and click Receive. Item Receipt page opens.<br><br>3. On the Item Receipt page, review the Item, Quantity, and Location. Once confirmed, click Save.</td>
+          <td>1. Transaction successfully Saved.<br><br>2. Items are received.<br><br>3. Validate GL Impact for accuracy.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P06.02</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Purchase Order from Order Items</td>
+          <td>Receive Purchase Order</td>
+          <td>Warehouse Operations</td> "<td>1. From the home Dashboard, click on 'Orders to Receive' on the Reminders portlet.
+
+            2. On the Receive Order page, locate the Purchase Order created in Step 1 and click Receive. Item Receipt page opens.
+
+            3. On the Item Receipt page, review the Item, Quantity, and Location. Once confirmed, click Save.</td>" "<td>1. Receive Orders page opens.
+
+            2. Transaction successfully Saved.
+
+            3. Verify GL impact is accurate.</td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P02.05</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Purchase Order, Item Receipt, Bills, Pay Bills</td>
+          <td>Receive Purchase Order</td>
+          <td>Warehouse Operations</td>
+          <td>1. From the home Dashboard, click on 'Orders to Receive' on the Reminders portlet (Refresh portlet as needed). Receive Orders page opens.<br><br>2. On the Receive Order page, locate the Purchase Order created in Step 1 and click Receive. Item Receipt page opens.<br><br>3. On the Item Receipt page, review the Item, Quantity, and Location. Once confirmed, click Save.</td>
+          <td>1. Transaction successfully Saved.<br><br>2. Items are received.<br><br>3. Validate GL Impact for accuracy.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>R2C01.04</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Customer Return - Credit</td>
+          <td>Receive Items</td>
+          <td>Warehouse Operations</td>
+          <td>1. From the home Dashboard, click on 'Return Authorizations to Receive' from the Reminders portlet.<br><br>2. From the Receive Return Authorization list, click the date field/link for the Return Authorization created in Step 2 (Return Authorization page opens).<br><br>3. On the Return Authorization page, click the 'Receive' button.<br><br>4. On the Item Receipt page, review the record and, if necessary, adjust the Quantity and Location.<br><br>5. Click Save.</td>
+          <td>1. Transaction successfully Saved.</td>
+        </tr>
+        <tr>
+          <td>Order to Cash_Return to Credit</td>
+          <td>O2C01.05</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Create Sales Order, Fulfill, Invoice</td>
+          <td>Fulfill Sales Orders</td>
+          <td>Warehouse Operations</td>
+          <td>1. In the Reminders portlet, click Refresh then click "Order to Fulfill"<br>Alternative navigation: Shipping > Shipping > Fulfill Orders<br><br>2. Click the corresponding "Fulfill" link in the SO# created in step1<br><br>3. Check mandatory fields like Status, Data, and the Quantity in Items sublist</td>
+          <td>1. Transaction successfully saved.<br><br>2. Item Fulfillment status is Shipped.<br><br>3. Sales Order status is Pending Billing.<BR>
+            <p><br></p>
+            <p>Note: For the status, it would depend if it will still be under pick, pack or already ship status.<br></p>
+          </td>
+        </tr>
+        <tr>
+          <td>Procure to Pay_Return to Debit</td>
+          <td>P2P09.02</td>
+          <td>SANKEY WUN SAN YEUNG</td>
+          <td>Vendor Return with Item Fulfillment</td>
+          <td>Ship Vendor Return Authorization</td>
+          <td>Warehouse Operations</td>
+          <td>1. From the Home Dashboard, click on Vendor Return Authorizations to Return on the Reminders portlet. <br><br>2. Click on the Date link next to the Return created in Step 1. <br><br>3. Click the Return button. Item Fulfillment page opens.<br><br>4. Review the Item Fulfillment information and click Save.</td>
+          <td>1. Ship Vendor Return Authorization form opens.<br><br>2. Vendor Return Authorization opens in View mode.<br><br>3. Transaction successfully Saved.</td>
+        </tr>
+      </tbody>
+    </table>
+    <script type="text/javascript">
+      $(document).ready(function() {
+        $('#tasks').DataTable( {
+        	"lengthMenu": [[50, -1], [50, "All"]]
+        } );
+      } );
+    </script>
+  </body>
+
+</html>
